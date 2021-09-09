@@ -15,6 +15,8 @@ barlen = 240000/tempo
 
 for note in ust.get_notes():
     lyric = note.get_lyric()
+    if lyric == "R":
+        lyric = "_"
     num = note.get_note_num()-35
     length = barlen*(note.get_length()/1920)
     decscript = decscript + (lyric+"<"+str(round(length))+","+str(round(num))+">")
